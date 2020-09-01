@@ -4,9 +4,8 @@ function debounce(wait, func) {
   return function(...args) {
     let context = this;
     clearTimeout(timeout);
-    timeout = setTimeout(
-      func.apply(this, ...args),
-      wait
-    )
+    timeout = setTimeout(() => { 
+      func.apply(this, ...args);
+    }, wait)
   }
 }
